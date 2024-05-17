@@ -1,0 +1,30 @@
+﻿@model Practice_WebApp_MVC_Venkat_TT.Models.Employee
+
+@{
+    // var PhotoPath = "(Model.PhotoPath ?? "CinemaHall.jpg");
+}
+<html>
+    <head>
+        <title>Employee Details</title>
+    </head>
+    <body>
+        <h1>Get Employee Details by specifc ID</h1>
+        <dl>
+            <dt>Employee ID</dt>
+            <dd>@Model.Id</dd>
+
+            <dt>Employee Name</dt>
+            <dt>@Model.Name</dt>
+
+            <dt>Email</dt>
+            <dt>@Model.Email</dt>
+
+            <dt> Department</dt>
+            <dt>@Model.Department</dt>
+
+            <dt> Image</dt>
+            <img class="card-img-top" src="~/Images/@Model.PhotoName" width="50px" height="50px" alt="card-img">
+            
+        </dl>
+    </body>
+</html>

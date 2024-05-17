@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Practice_WebApp_MVC_Venkat_TT.Models.Employee>
+
+@{
+    ViewData["Title"] = "Employee Page";
+}
+
+<div class="Container">
+    <div class="panel-body">
+        <table class="table table-hover table-bordered table-condensed" id="withroles">
+            <thead style="background-color:cadetblue">
+            <th><b>ID</b></th>
+            <th><b>Name</b></th>
+            <th><b>EmailID</b></th>
+            <th><b>Department</b></th>
+            <th><b>Image</b></th>
+            <th><b>ViewDetails</b></th>
+            <th><b>Delete</b></th>
+            <th><b>Update</b></th>
+
+            </thead>
+
+            <tbody style="background-color:khaki" id="tbody">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.Email</td>
+                        <td>@item.Department</td>
+                        <td><img class="card-img-top" src="~/Images/@item.PhotoName" alt="image" height="60px" width="10px" /></td>
+                        <td><a asp-controller="Home" asp-action="EmployeeDetailById" asp-route-id="@item.Id" class="btn btn-primary">View</a></td>
+                        <td><a asp-controller="Home" asp-action="DeleteDetails" asp-route-id="@item.Id" class="btn btn-primary">Delete</a></td>
+                        <td><a asp-controller="Home" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+
+<div>
+    <a asp-controller="Home" asp-action="AddEmployeeDetails" class="btn btn-primary">CreateEmployees</a>
+</div>
